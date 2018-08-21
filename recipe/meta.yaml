@@ -10,10 +10,13 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/SFMT/{{ name }}-src-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - patches/dSFMT.h.patch
+    - patches/dSFMT.c.patch
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
 
 requirements:
   build:
