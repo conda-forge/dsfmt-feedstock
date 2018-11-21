@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-make std
-make std-check
-make sse2-check
+make std CC="${CC}"
+make std-check CC="${CC}"
+make sse2-check CC="${CC}"
 
 ${CC} ${CFLAGS} -O3 -finline-functions -fomit-frame-pointer -DNDEBUG \
       -DDSFMT_MEXP=19937 -fPIC -fno-strict-aliasing \
